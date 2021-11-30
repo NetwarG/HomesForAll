@@ -1,0 +1,1 @@
+Для запуска webpack использовать команду npm run start:dev
