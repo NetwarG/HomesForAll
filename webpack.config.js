@@ -1,5 +1,4 @@
 const path = require('path');
-const rootDirectory = path.resolve(__dirname, './');
 
 module.exports = {
     mode: 'development',
@@ -7,12 +6,12 @@ module.exports = {
     // Path to the entry file, change it according to the path you have
     entry: [
         "babel-polyfill",
-        path.join(__dirname, './src/index.js'),
+        path.join(__dirname, 'src/index.js'),
     ],
 
     // Path for the output files
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'public'),
         filename: 'app.bundle.js',
     },
 
@@ -25,15 +24,16 @@ module.exports = {
             {
                 test: /\.js$/,
                 include: [
-                    path.resolve(rootDirectory, 'src'),
-                    path.resolve(rootDirectory, 'node_modules/@react-navigation'),
-                    path.resolve(rootDirectory, 'node_modules/@react-native-async-storage'),
-                    path.resolve(rootDirectory, 'node_modules/react-native-vector-icons'),
-                    path.resolve(rootDirectory, 'node_modules/react-native-paper'),
-                    path.resolve(rootDirectory, 'node_modules/react-native-maps'),
-                    path.resolve(rootDirectory, 'node_modules/@react-native-community'),
-                    path.resolve(rootDirectory, 'node_modules/react-native-vector-icons'),
-                    path.resolve(rootDirectory, 'node_modules/react-native-web-maps'),
+                    path.resolve(__dirname, 'src'),
+                    path.resolve(__dirname, 'node_modules/react-navigation'),
+                    path.resolve(__dirname, 'node_modules/@react-native-async-storage'),
+                    path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
+                    path.resolve(__dirname, 'node_modules/react-native-paper'),
+                    path.resolve(__dirname, 'node_modules/react-native-maps'),
+                    path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
+                    path.resolve(__dirname, 'node_modules/react-native-web-maps'),
+                    path.resolve(__dirname, 'node_modules/react-native'),
+                    path.resolve(__dirname, 'node_modules/react-native-web'),
                 ],
                 //exclude: /node_modules[/\\](?!react-native-vector-icons)/,
                 use: {

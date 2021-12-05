@@ -41,6 +41,7 @@
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "rollup-plugin-commonjs": "^10.1.0",
     "spring": "^0.0.0",
     "untitled": "^0.0.1",
     "web-vitals": "^1.1.2",
@@ -50,7 +51,7 @@
   "serve": "webpack serve --config webpack.config.js --progress",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack --progress",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:dev": "webpack serve"
@@ -86,6 +87,7 @@
     "react-native-maps": "^0.29.4",
     "react-native-vector-icons": "^9.0.0",
     "react-redux": "^7.2.6",
+    "rollup-plugin-babel": "^4.4.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^3.11.1"
   }
