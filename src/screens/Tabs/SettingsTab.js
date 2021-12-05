@@ -14,7 +14,7 @@ const SettingsTab = ({navigation}) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [duration, setDuration] = useState('6 месяцев');
-  const [peopleLimit, setPeopleLimit] = useState(1);
+  const [peopleLimit, setPeopleLimit] = useState('1');
   const [kidsAllowance, setKidsAllowance] = useState(false);
   const [avatarUrl, setAvatarUrl] = useState('');
 
@@ -35,29 +35,30 @@ const SettingsTab = ({navigation}) => {
   }, []);
 
   const updateProfileInfo = () => {
-    // axios.post(
-    //     'http://sevensem.switzerlandnorth.azurecontainer.io/v1/messages/profile',
-    //     {name,
-    //       phone,
-    //       duration,
-    //       peopleLimit,
-    //       kidsAllowance,
-    //       animalAllowance,
-    //       animalType,
-    //       avatarUrl},
-    //       headers: {
-    //         Authorization: 'Bearer ' + token,
-    //       },
-    //     },
-    //   )
-    //   .then((res) => {
-    //     alert('Информация о профиле успешно обновлена');
-    //   })
-    //   .catch((err) => {
-    //     // debugger
-    //     alert('Ошибка при запросе к серверу');
-    //     console.log(err);
-    //   });
+    axios.post(
+        'http://sevensem.switzerlandnorth.azurecontainer.io/v1/messages/profile',
+        {name,
+          phone,
+          duration,
+          peopleLimit,
+          kidsAllowance,
+          animalAllowance,
+          animalType,
+          avatarUrl},
+        {
+          headers: {
+            Authorization: 'Bearer ' + props.route.params.token,
+          },
+        },
+      )
+      .then((res) => {
+        alert('Информация о профиле успешно обновлена');
+      })
+      .catch((err) => {
+        // debugger
+        alert('Ошибка при запросе к серверу');
+        console.log(err);
+      });
     alert('Информация о профиле успешно обновлена');
   };
 

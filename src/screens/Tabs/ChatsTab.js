@@ -13,25 +13,25 @@ const ChatsTab = ({navigation}) => {
     let request = chatsList;
     setChatsInfo(request);
 
-    // axios
-    //   .get(
-    //     'http://sevensem.switzerlandnorth.azurecontainer.io/v1/messages/getChats',
-    //     {
-    //       params: {
-    //         login1: login,
-    //       },
-    //       headers: {
-    //         Authorization: 'Bearer ' + token,
-    //       },
-    //     },
-    //   )
-    //   .then((res) => {
-    //     setChatsList(res.data);
-    //   })
-    //   .catch((err) => {
-    //     // debugger
-    //     console.log(err);
-    //   });
+    axios
+      .get(
+        'http://sevensem.switzerlandnorth.azurecontainer.io/v1/messages/getChats',
+        {
+          params: {
+            login1: login,
+          },
+          headers: {
+            Authorization: 'Bearer ' + props.route.params.token,
+          },
+        },
+      )
+      .then((res) => {
+        setChatsList(res.data);
+      })
+      .catch((err) => {
+        // debugger
+        console.log(err);
+      });
 
   }, []);
 

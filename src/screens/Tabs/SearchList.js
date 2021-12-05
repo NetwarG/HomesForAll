@@ -42,25 +42,25 @@ const SearchList = ({navigation}) => {
   useEffect(() => {
     setCurrentPlace(searchResult[currentPlaceId]);
 
-    // axios
-    //   .get(
-    //     'http://sevensem.switzerlandnorth.azurecontainer.io/v1/messages/getChats',
-    //     {
-    //       params: {
-    //         login1: login,
-    //       },
-    //       headers: {
-    //         Authorization: 'Bearer ' + props.route.params.token,
-    //       },
-    //     },
-    //   )
-    //   .then((res) => {
-    //     dispatch(res.data);
-    //   })
-    //   .catch((err) => {
-    //     // debugger
-    //     console.log(err);
-    //   });
+    axios
+      .get(
+        'http://sevensem.switzerlandnorth.azurecontainer.io/v1/messages/getChats',
+        {
+          params: {
+            login1: login,
+          },
+          headers: {
+            Authorization: 'Bearer ' + props.route.params.token,
+          },
+        },
+      )
+      .then((res) => {
+        dispatch(res.data);
+      })
+      .catch((err) => {
+        // debugger
+        console.log(err);
+      });
 
     setPlaceImages(searchResult[currentPlaceId].place.images);
     // debugger;

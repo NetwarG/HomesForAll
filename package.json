@@ -80,6 +80,7 @@
     "axios": "^0.24.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "patch-package": "^6.4.7",
     "postinstall-prepare": "^2.0.0",
     "react-native-maps": "^0.29.4",
